@@ -17,6 +17,78 @@ body {
   background-color: #05070c;
 }
 
+.principal h2 {
+  margin-bottom: 22px;
+  font-size: 24px;
+  color: #e2e5ec;
+}
+
+
+.tarjetas-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+.tarjeta {
+  overflow: hidden;
+  background-color: #202b40;
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+
+.tarjeta-imagen {
+  display: block;
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+}
+
+
+.tarjeta-contenido {
+  padding: 18px;
+}
+
+.tarjeta-contenido h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.tarjeta-contenido p {
+  margin-bottom: 20px;
+  color: #9ba9bd;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+.btn-suscribir {
+  padding: 10px 19px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b5ff0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-suscribir:hover {
+  background-color: #294bd0;
+}
+
+@media (max-width: 900px) {
+  .tarjetas-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .tarjetas-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 .sidebar {
   width: 330px;

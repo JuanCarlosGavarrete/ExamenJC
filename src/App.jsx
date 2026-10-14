@@ -1,25 +1,17 @@
 import "./App.css";
-import { Route, Routes, Link } from "react-router-dom";
-import { Grid, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Route, Routes, Link } from "react-router";
 
 function Tarjeta({ titulo, descripcion, image }) {
   return (
-    <Card>
-      <CardMedia
-        component="img"
-        height="160"
-        image={image}
-        alt={titulo}
-      />
-      <CardContent>
-        <Typography variant="h6">
-          {titulo}
-        </Typography>
-        <Typography variant="body2">
-          {descripcion}
-        </Typography>
-      </CardContent>
-    </Card>
+    <div className="tarjeta">
+      <img src={image} alt={titulo} className="tarjeta-imagen" />
+
+      <div className="tarjeta-contenido">
+        <h3>{titulo}</h3>
+        <p>{descripcion}</p>
+        <button>Ver más</button>
+      </div>
+    </div>
   );
 }
 
@@ -29,19 +21,22 @@ function App() {
       id: 1,
       title: "Base de datos",
       descripcion: "Base de datos bien hecha",
-      image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600",
+      image:
+        "https://unsplash.com/es/fotos/persona-con-chaqueta-naranja-con-volantes-xPJL_3JRjKE",
     },
     {
       id: 2,
       title: "Programación Web",
       descripcion: "Descripción de programación web",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600",
+      image:
+        "https://unsplash.com/es/fotos/persona-con-chaqueta-naranja-con-volantes-xPJL_3JRjKE",
     },
     {
       id: 3,
       title: "Robótica",
       descripcion: "Descripción de robótica",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600",
+      image:
+        "https://unsplash.com/es/fotos/persona-con-chaqueta-naranja-con-volantes-xPJL_3JRjKE",
     },
   ];
 
@@ -54,21 +49,48 @@ function App() {
     );
   }
 
-  function Clases() {
-    return (
-      <Grid container spacing={3}>
+function Clases() {
+  return (
+    <>
+      <h2>Módulos disponibles</h2>
+
+      <div className="tarjetas-container">
         {tarjeta.map((clase) => (
-          <Grid key={clase.id} size={{ xs: 12, sm: 6, md: 4 }}>
-            <Tarjeta
-              titulo={clase.title}
-              descripcion={clase.descripcion}
-              image={clase.image}
+          <div className="tarjeta" key={clase.id}>
+            <img
+              src={clase.image}
+              alt={clase.title}
+              className="tarjeta-imagen"
             />
-          </Grid>
+
+            <div className="tarjeta-contenido">
+              <h3>{clase.title === "Base de datos"
+                ? "Bases de Datos"
+                : clase.title}</h3>
+
+              <p>
+                {clase.id === 1
+                  ? "Fundamentos de modelado y consultas SQL"
+                  : clase.id === 2
+                  ? "React en el frontend y Laravel en el backend"
+                  : "Arduino y control de circuitos electrónicos"}
+              </p>
+
+              <button
+                className="btn-suscribir"
+                onClick={() =>
+                  alert(`Te has suscrito a ${clase.title}`)
+                }
+              >
+                Suscribirse
+              </button>
+            </div>
+          </div>
         ))}
-      </Grid>
-    );
-  }
+      </div>
+    </>
+  );
+}
 
   function Docentes() {
     return (
@@ -82,9 +104,7 @@ function App() {
   return (
     <div className="dashboard">
       <aside className="sidebar">
-        <div className="usuario">
-          Usuario: Juan
-        </div>
+        <div className="usuario">Usuario: Juan</div>
 
         <nav className="menu">
           <Link to="/">Inicio</Link>
