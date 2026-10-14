@@ -1,0 +1,127 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #10172a;
+  color: #e2e5ec;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  padding: 13px 0 0 22px;
+  background-color: #05070c;
+}
+
+
+.sidebar {
+  width: 330px;
+  flex-shrink: 0;
+  background-color: #202b40;
+}
+
+.usuario {
+  height: 118px;
+  padding: 20px 24px;
+  background-color: #405fa9;
+  font-size: 24px;
+  font-weight: bold;
+  color: #d2d9e8;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+.menu a {
+  padding: 17px 24px;
+  color: #cbd3e0;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.2s;
+}
+
+.menu a:hover {
+  background-color: #647dac;
+  color: white;
+}
+
+
+.contenido {
+  flex: 1;
+  min-width: 0;
+  background-color: #10172a;
+}
+
+.encabezado {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #202b40;
+}
+
+.encabezado h1 {
+  font-size: 54px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.principal {
+  padding: 46px 36px;
+}
+
+.principal h2 {
+  font-size: 24px;
+  margin-bottom: 22px;
+}
+
+.principal p {
+  font-size: 24px;
+}
+
+
+@media (max-width: 700px) {
+  .dashboard {
+    padding: 0;
+  }
+
+  .sidebar {
+    width: 150px;
+  }
+
+  .usuario {
+    height: auto;
+    min-height: 100px;
+    padding: 15px 10px;
+    font-size: 17px;
+  }
+
+  .menu a {
+    padding: 16px 10px;
+    font-size: 16px;
+  }
+
+  .encabezado {
+    height: 100px;
+    padding: 10px;
+  }
+
+  .encabezado h1 {
+    font-size: 28px;
+  }
+
+  .principal {
+    padding: 28px 18px;
+  }
+
+  .principal p {
+    font-size: 18px;
+  }
+}
