@@ -20,21 +20,21 @@ function App() {
     {
       id: 1,
       title: "Base de datos",
-      descripcion: "Base de datos bien hecha",
+      descripcion: "BaFundamentos de modelado y consultas SQL",
       image:
         "https://unsplash.com/es/fotos/persona-con-chaqueta-naranja-con-volantes-xPJL_3JRjKE",
     },
     {
       id: 2,
       title: "Programación Web",
-      descripcion: "Descripción de programación web",
+      descripcion: "React en el frontend y Laravel en el backend",
       image:
         "https://unsplash.com/es/fotos/persona-con-chaqueta-naranja-con-volantes-xPJL_3JRjKE",
     },
     {
       id: 3,
       title: "Robótica",
-      descripcion: "Descripción de robótica",
+      descripcion: "Arduino y control de circuitos electrónicos",
       image:
         "https://unsplash.com/es/fotos/persona-con-chaqueta-naranja-con-volantes-xPJL_3JRjKE",
     },
